@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'fast_jsonapi'
 gem 'jwt'
 gem 'knock'
 gem 'pg', '>= 0.18', '< 2.0'

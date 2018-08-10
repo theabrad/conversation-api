@@ -14,7 +14,7 @@
 * Run `rails -s`
 
 # Creating a user
-To create a user send a POST request using Postman
+To create a user send a POST request using Postman to `localhost:3000/users`
 Example:
 ``` json
 {
@@ -23,6 +23,30 @@ Example:
     "email": "foo@bar.com",
     "password": "password",
     "password_confirmation": "password"
+  }
+}
+```
+
+# User Authentication
+To authenticate a user, send a POST request to `localhost:3000/user_token`
+``` json
+{
+  "auth": {
+    "email": "foo@bar.com"
+    "password": "password"
+  }
+}
+```
+
+# Create Conversations
+To create a conversation you must first authenticate a user as done above.
+Upon authentication, you should recieve a Json Web Token(JWT). Place That
+JWT as a bearer token in Postman's authorization header.
+Send a POST request to `localhost:3000/conversations`
+``` json
+{
+  "conversation": {
+    "name": "conversation1"
   }
 }
 ```

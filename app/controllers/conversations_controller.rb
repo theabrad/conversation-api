@@ -1,6 +1,16 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @conversations = user.conversations
+    else
+      @conversations = Conversation.all
+    end
+
+    render json: ConversationSerializer.new(@conversations)
+  end
   def create
     @conversation = Conversation.new(conversation_params)
     

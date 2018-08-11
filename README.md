@@ -27,6 +27,9 @@ Example:
 }
 ```
 
+# List Users
+To list all of the users, send a GET request to `localhost:3000/users`
+
 # User Authentication
 To authenticate a user, send a POST request to `localhost:3000/user_token`
 ``` json
@@ -50,3 +53,8 @@ Send a POST request to `localhost:3000/conversations`
   }
 }
 ```
+
+# List all Conversations by a User
+After authenticated(see above) you can list all of the conversations that
+a user is a part of.
+Send a GET request to `localhost:3000/user/:user_id/conversations`

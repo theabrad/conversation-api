@@ -12,6 +12,14 @@
 * Run `bundle install`
 * `rails db:create` and `rails db:migrate`
 * Run `rails -s`
+* Run the test suite with `rspec -fd`
+
+# API Endpoints
+`/users` GET, POST
+`/user_token` POST
+`/users/:user_id/conversations` GET
+`/conversations` GET
+`/conversations/:conversation_id/messages` GET, POST
 
 # Creating a user
 To create a user send a POST request using Postman to `localhost:3000/users`
@@ -58,3 +66,16 @@ Send a POST request to `localhost:3000/conversations`
 After authenticated(see above) you can list all of the conversations that
 a user is a part of.
 Send a GET request to `localhost:3000/user/:user_id/conversations`
+
+# Send a Message to a Conversation
+Send a POST request to `localhost:3000/conversations/:id/messages`
+``` json
+{
+  "message": {
+    "body": "Sending a message"
+  }
+}
+```
+
+# View all messages in a Conversation
+Send a GET request to `localhost:3000/conversations/:id/messages`

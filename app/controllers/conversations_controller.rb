@@ -11,6 +11,7 @@ class ConversationsController < ApplicationController
 
     render json: ConversationSerializer.new(@conversations)
   end
+
   def create
     @conversation = Conversation.new(conversation_params)
     

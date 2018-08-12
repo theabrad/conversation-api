@@ -15,10 +15,10 @@
 * Run the test suite with `rspec -fd`
 
 # API Endpoints
-`/users` GET, POST
-`/user_token` POST
-`/users/:user_id/conversations` GET
-`/conversations` GET
+`/users` GET, POST  
+`/user_token` POST  
+`/users/:user_id/conversations` GET  
+`/conversations` GET  
 `/conversations/:conversation_id/messages` GET, POST
 
 # Creating a user

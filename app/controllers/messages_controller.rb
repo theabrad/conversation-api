@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
     if @message.save
       render json: MessageSerializer.new(@message)
     else
-      render json: @message.errors
+      render json: @message.errors, status: :unprocessable_entity
     end
   end
 

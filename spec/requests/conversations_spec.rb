@@ -17,7 +17,7 @@ describe 'Conversations API' do
     end
   end
 
-  describe 'GET /users/:id/conversations' do
+  describe 'GET /users/:user_id/conversations' do
     it 'gets a list of all conversations a user has' do
       user = create(:user)
       conversations = create_list(:conversation, 5) 
@@ -29,6 +29,20 @@ describe 'Conversations API' do
 
       expect(response).to be_successful
       expect(json['data'].size).to eq(5)
+    end
+  end
+
+  describe 'POST /users/:user_id/conversations/:conversation_id/adduser' do
+    it 'adds a user to the conversation' do
+      user = create(:user)
+      conversation = create(:conversation)
+
+      post "/users/#{user.id}/conversations/#{conversation.id}/adduser", headers: auth_headers(user)
+
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json['data']['relationships']['users']['data'].last['id']).to eq(user.id.to_s)
     end
   end
 end

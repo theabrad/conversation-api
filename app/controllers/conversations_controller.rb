@@ -23,6 +23,13 @@ class ConversationsController < ApplicationController
     end
   end
 
+  def add_user
+    @conversation = Conversation.find(params[:conversation_id])
+    @user = User.find(params[:user_id])
+    UserConversation.create(user: @user, conversation: @conversation)
+    render json: ConversationSerializer.new(@conversation)
+  end
+
   private
   
   def conversation_params

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if user.save
       render json: UserSerializer.new(user)
     else
-      render json: user.errors
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 

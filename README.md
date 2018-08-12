@@ -18,6 +18,7 @@
 `/users` GET, POST  
 `/user_token` POST  
 `/users/:user_id/conversations` GET  
+`/users/:user_id/conversations/:conversation_id/adduser` POST
 `/conversations` GET  
 `/conversations/:conversation_id/messages` GET, POST
 
@@ -61,6 +62,10 @@ Send a POST request to `localhost:3000/conversations`
   }
 }
 ```
+
+# Add User to a Conversation
+Send a POST request to `localhost:3000/users/:user_id/conversations/:conversation_id/adduser`
+with the User ID and the Conversation ID
 
 # List all Conversations by a User
 After authenticated(see above) you can list all of the conversations that

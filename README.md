@@ -1,4 +1,4 @@
-# Simple Lua api
+# Simple Conversation API 
 
 # Dependencies
 * Ruby 2.5.1
@@ -27,7 +27,7 @@ To create a user send a POST request using Postman to `localhost:3000/users`
 Example:  
 ``` json
 {
-  user: {
+  "user": {
     "username": "foobar",
     "email": "foo@bar.com",
     "password": "password",
@@ -45,7 +45,7 @@ Example:
 ``` json
 {
   "auth": {
-    "email": "foo@bar.com"
+    "email": "foo@bar.com",
     "password": "password"
   }
 }

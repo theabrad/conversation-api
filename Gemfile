@@ -10,7 +10,7 @@ gem 'fast_jsonapi'
 gem 'jwt'
 gem 'knock'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 5.6'
 gem 'rails', '~> 5.2.1'
 
 group :development, :test do
